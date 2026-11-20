@@ -1,0 +1,18 @@
+{
+  "name": "piano-school",
+  "version": "0.1.0",
+  "description": "PWA para ajudar crianças a dar os primeiros passos no piano",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "node scripts/serve.mjs",
+    "start": "tsc && node scripts/serve.mjs",
+    "test": "tsc && node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
