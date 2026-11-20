@@ -132,8 +132,8 @@ function notesRow(items: Item[], s: Settings): string {
   const notes = items.filter((i) => i.kind === 'note').length;
   const rests = items.length - notes;
   const lyrics = s.showLyrics && items.some((i) => i.kind === 'note' && i.syllable);
-  // Vertical layout: 4 cards per row, 5 when a part is long (keeps it to 2 rows).
-  const cols = notes > 8 ? 5 : 4;
+  // Vertical layout: 4 cards per row; 5 when that fits the part better (5 notes in one row, long parts in 2 rows).
+  const cols = notes === 5 || notes > 8 ? 5 : 4;
   const cells = items.map((item) => (item.kind === 'rest' ? restCell() : noteCell(item, s))).join('');
   return `<div class="notes${lyrics ? '' : ' no-lyrics'}" style="--n:${notes};--r:${rests};--cols:${cols}">${cells}</div>`;
 }

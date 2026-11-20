@@ -60,9 +60,6 @@ Pensada para usar no telemóvel ou tablet Android pousado no suporte da pauta do
 | Lá | A | índigo |
 | Si | B | rosa |
 
-### Mockups
-
-Mockups interativos aprovados (vertical e horizontal): <https://claude.ai/artifact/BSRwWFL3m2AReCBJMH1bKP>
 
 ---
 
@@ -94,22 +91,15 @@ Os formatos MusicXML, ABC e MIDI guardam a duração das notas, as pausas e a oi
 
 ## Plataforma
 
-**Decisão: PWA (Progressive Web App)**, uma única base de código web que se instala como app:
+**PWA (Progressive Web App)**, uma única base de código web que se instala como app:
 
 - **Android (telemóvel/tablet):** instala-se a partir do Chrome ("Adicionar ao ecrã principal") e abre em ecrã inteiro como uma app normal. Se um dia fizer sentido, pode ir para a Play Store embrulhada como TWA, sem reescrever nada.
-- **Windows (Surface, ecrã tátil):** instala-se a partir do Edge ou do Chrome como app, com janela própria, ícone no menu Iniciar e suporte de toque.
+- **Windows:** instala-se a partir do Edge ou do Chrome como app, com janela própria, ícone no menu Iniciar e suporte de toque.
 - **Offline:** service worker e músicas guardadas localmente (IndexedDB).
 - **Fase 3:** o microfone funciona via Web Audio (`getUserMedia` + deteção de frequência YIN/MPM, ex.: biblioteca `pitchy`). A ligação MIDI ao piano funciona via Web MIDI, suportado no Chrome e no Edge, em Android e Windows.
 - **Distribuição:** alojamento gratuito no GitHub Pages; cada `git push` publica uma nova versão.
 - **Stack:** TypeScript sem framework, compilado com `tsc` para módulos ES que o browser carrega diretamente. Não há bundler nem dependências em tempo de execução: a única dependência de desenvolvimento é o `typescript`.
 
-Alternativas consideradas:
-
-| Opção | Android | Windows | Prós | Contras |
-|---|---|---|---|---|
-| **PWA (escolhida)** | ✔ | ✔ | Um só código, sem lojas, atualização instantânea, também funciona em iPad/Mac | Latência de áudio um pouco maior em alguns Android (não é crítico para deteção de notas) |
-| Flutter | ✔ | ✔ | App nativa, boa performance | Duas compilações, plugins de áudio/MIDI menos maduros no Windows |
-| Kotlin + Compose Multiplatform | ✔ | ✔ (JVM) | Melhor acesso ao áudio e MIDI no Android | Mais complexo; a versão desktop é mais pesada |
 
 ---
 

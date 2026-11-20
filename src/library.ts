@@ -70,6 +70,21 @@ F4:Oh F4:what F4:fun F4:it F4:is E4:to E4:ride
 E4:in E4:a G4:one G4:horse F4:o- D4:pen C4:sleigh
 `,
 
+  // Italian folk song, in A minor (white keys only). Melody only; the
+  // notes above C5 show the "octave up" arrow.
+  'bella-ciao': `
+titulo: Bella Ciao
+tom: Lá menor
+autor: Popular italiana
+E4 A4 B4 C5 A4
+E4 A4 B4 C5 A4
+E4 A4 B4 C5 . B4 A4 E4
+B4 A4 E4 . E4 E4 E4
+D5 E5 F5 D5
+F5 E5 D5 E5 C5
+D5 C5 B4 E4 B4 C5 A4
+`,
+
   'we-wish-you-a-merry-christmas': `
 titulo: We Wish You a Merry Christmas
 tom: C
