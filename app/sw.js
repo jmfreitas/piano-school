@@ -3,7 +3,7 @@
  * - Google Fonts: cache first.
  * Bump CACHE when the caching strategy changes.
  */
-const CACHE = 'piano-school-v1';
+const CACHE = 'piano-school-v2';
 const CORE = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const CORE = [
   './js/song.js',
   './js/notes.js',
   './js/settings.js',
+  './js/favorites.js',
   './js/dom.js',
   './js/views/home.js',
   './js/views/play.js',

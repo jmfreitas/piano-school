@@ -259,3 +259,37 @@ svg { display: block; }
 }
 
 .notes.no-lyrics .syll { display: none; }
+
+/* ---------- Favourites ---------- */
+
+.filter { display: flex; gap: 10px; margin: 0 0 20px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px;
+  border-radius: 24px; border: 2px solid var(--line-strong); background: #fff; color: var(--text);
+  font-size: 18px; font-weight: 800; cursor: pointer; touch-action: manipulation;
+}
+.chip svg { width: 22px; height: 22px; }
+.chip[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: #fff; }
+
+.song-item { position: relative; }
+.song-card .song-name { padding-right: 52px; }
+.fav-btn {
+  width: 52px; height: 52px; flex-shrink: 0; padding: 0;
+  display: grid; place-items: center; border: 0; border-radius: 16px; background: transparent;
+  color: #8A8F9C; cursor: pointer; touch-action: manipulation;
+}
+.fav-btn svg { width: 32px; height: 32px; }
+.fav-btn.on svg { filter: drop-shadow(0 1px 0 rgba(143, 106, 0, 0.35)); }
+.song-item > .fav-btn { position: absolute; top: 10px; right: 10px; }
+.bar-fav { width: 48px; height: 48px; border: 2px solid var(--line); background: #fff; }
+.bar-fav svg { width: 28px; height: 28px; }
+@media (orientation: landscape) {
+  .bar-fav { order: 2; }
+}
+
+.empty {
+  padding: 32px 24px; border-radius: 24px; background: #fff; border: 2px dashed var(--line-strong);
+  text-align: center; font-size: 18px;
+}
+.empty p { margin: 0 0 12px; }
+.empty svg { display: inline-block; width: 22px; height: 22px; vertical-align: -4px; color: #8A8F9C; }

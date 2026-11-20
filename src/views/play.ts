@@ -2,6 +2,8 @@ import { HOME_OCTAVE, LETTERS, NOTE_INFO, toMidi } from '../notes.js';
 import { type Item, type Note, type Song, letterLabel, octaveRange } from '../song.js';
 import type { Settings } from '../settings.js';
 import { ICONS, esc } from '../dom.js';
+import { isFavorite, toggleFavorite } from '../favorites.js';
+import { favButton } from './home.js';
 
 const NEUTRAL = { bg: '#FFFFFF', ink: '#1F2430' };
 
@@ -33,6 +35,7 @@ export function mountPlay(root: HTMLElement, song: Song, settings: Settings, nav
     prev: () => go(part - 1),
     next: () => go(part + 1),
     restart: () => go(0),
+    fav: () => { toggleFavorite(song.id); render(); },
   };
 
   function render(): void {
@@ -93,6 +96,7 @@ function view(song: Song, part: number, s: Settings): string {
         <h1 class="song-title">${esc(song.title)}</h1>
         <div class="part-label">${esc(label)}</div>
       </div>
+      ${favButton(song.id, isFavorite(song.id), 'bar-fav')}
       <div class="progress" role="progressbar" aria-label="Progresso na música" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}">
         <div style="width:${progress}%"></div>
       </div>
